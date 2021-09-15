@@ -1,25 +1,18 @@
 "use strict";
 
-const num = 50;
+// let num = 50;
 
-// if (num < 49) {
-//     console.log('error');
-// } else if(num > 100) {
-//     console.log('слишком много!');
-// } else {
-//     console.log('ok!');
+// // do {
+// //     console.log(num);
+// //     num++;
+// // }
+
+// // while (num <= 55);
+
+// for( let i = 1; i < 8; i++) {
+//     if ( i === 2) {
+//         console.log('continue');
+//         continue;
+//     }
+//     console.log(i);
 // }
-
-// (num == 50)? console.log('ok!') : console.log('error!');
-
-switch(num) {
-    case 50:
-        console.log('ok!');
-        break;
-    case 49:
-        console.log('49!');
-        break;
-    default:
-        console.log('error!');
-        break;
-}
