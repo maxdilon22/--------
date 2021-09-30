@@ -1,53 +1,40 @@
 "use strict";
 
-const numberOfFilms = +prompt('Сколько фильмов Вы уже посмотрели?','');
-
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies : {},
-    actors : {},
-    genres : [],
-    privat : false
-};
-
-
-// for (let i = 0; i < 2; i++){
-//     const a = prompt('Какой последний фильм Вы посмотрели?','');
-//     const b = prompt('На сколько вы оцените его?','');
-//     if ( a != null && b != null && a != '' && b != '' && a.length < 50){
-//     personalMovieDB.movies[a] = b;
-// } else {
-//     console.log('error!');
-//     i--;
-// }
+// const num = 10;
+// function showFirstMsg() {
+//     let num = 10;
+//     return num;
 // }
 
+// console.log(showFirstMsg());
 
-let i = 0;
+// function calc(a,b) {
+//     return a +b;
+// }
 
-do {
-    const a = prompt('Какой последний фильм Вы посмотрели?','');
-    const b = prompt('На сколько вы оцените его?','');
-    if ( a != null && b != null && a != '' && b != '' && a.length < 50){
-    personalMovieDB.movies[a] = b;
-} else {
-    console.log('error!');
-    i--;
-}
-i++;
-}
-while ( i < 2 );
+// console.log(calc(4,6));
+// console.log(calc(4,4));
+// console.log(calc(1,6));
 
 
+// function ret(){
+//     let num = 100;
+//     return num;
+// }
+
+// let one = ret();
+
+// console.log(one);
 
 
-if ( personalMovieDB.count < 10) {
-    console.log('Просмотрено мало фильмов');
-} else if ( personalMovieDB.count > 10 && personalMovieDB.count < 30 ) {
-    console.log('Вы классический зритель');
-} else if (personalMovieDB.count >= 30 ) {
-    console.log('Вы киноман');
-} else {
-    console.log('Произошла ошибка');
-}
-console.log(personalMovieDB);
+// let two = function(){
+//     return console.log('hello');
+// };
+// two();
+
+// const calc = (a,b) => {
+//     console.log('1');
+//     return a + b;
+// };
+
+// console.log(1,4);
