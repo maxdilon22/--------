@@ -1,21 +1,29 @@
 "use strict";
 
-// console.log(document.body.childNodes);
+// touchstart
 
-// console.log(document.documentElement);
+// touchmove
 
-// console.log(document.body.firstElementChild);
+// touchend
 
-// console.log(document.body.lastElementChild);
+// touchenter
 
-// console.log(document.querySelector('#current').parentNode.parentNode);
+// touchleave
 
-// console.log(document.querySelector('[data-current = "3"]').parentElement);
+// touchcancel
 
 
-for (let key of document.body.childNodes) {
-    if(key.nodeName == "#text") {
-        continue;
-    } 
-    console.log(key);
-}
+document.addEventListener('DOMContentLoaded',()=> {
+    const box = document.querySelector('.box');
+    box.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        console.log(e.targetTouches[0].pageX);
+    });
+});
+
+
+// e . touches
+
+// targeTouches
+
+// changedTouches
