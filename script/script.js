@@ -1,51 +1,40 @@
+
 "use strict";
-const wrapper = document.querySelector('.wrapper');
-const box = document.getElementById('box');
-const btns = document.getElementsByTagName('button');
-const cyrcles = document.getElementsByClassName('circle');
-const hearths = wrapper.querySelectorAll('.hearth');
-const oneHearth = wrapper.querySelector('.hearth');
 
-// box.style.backgroundColor = 'blue';
-// box.style.width = '700px';
+// const btn = document.querySelectorAll('button'),
+//       overlay = document.querySelector('.overlay');
 
-btns[1].style.borderRadius = '100%';
+// // let i = 0;
+// // const del = e => {
+// //     // i++;
+// //     console.log(e.currentTarget);
+// //     console.log(e.type);
+// //     // if (i == 1) {
+// //     //     btn.removeEventListener('click', del);
+// //     // } 
 
-// cyrcles[0].style.backgroundColor = 'red';
+// // };
 
-// box.style.cssText = 'background-color: blue; width: 500px';
+// // btn.addEventListener('click', del);
+// // overlay.addEventListener('click', del);
 
-// for (let i = 0; i < hearths.length; i++) {
-//     hearths[i].style.backgroundColor = 'red';
-// }
 
-// hearths.forEach( (item) => {
-//     item.style.backgroundColor = 'red';
+// // const link = document.querySelector('a');
+
+// // link.addEventListener('click', e => {
+// //     e.preventDefault();
+// //     console.log(e.target);
+// // });
+
+
+// btn.forEach( i => {
+//     i.addEventListener('click', e => {
+//         console.log(e.target);
+//     },{once: true});
 // });
 
-// for (let key of hearths) {
-//     key.style.backgroundColor = 'red';
-// }
-
-const div = document.createElement('div');
-div.innerHTML = '<h1>Hello, world!</h1>';
-// div.insertAdjacentHTML('afterend','<h2>Hello</h2>');
-// div.textContent = 'hello';
-// const txt = document.createTextNode('hi!');
-
-div.classList.add('black');
-
-wrapper.prepend(div);
-// hearths[0].after(div);
-// cyrcles[0].remove();
-
-// hearths[0].replaceWith(hearths[1]);
-// Старые методы
-// wrapper.appendChild(div);
-
-// wrapper.insertBefore(div, hearths[1]);
+// ------------------------------------------ //
+//                 ==PRACTIC==                //
+// ------------------------------------------ //
 
 
-// wrapper.removeChild(hearths[0]);
-
-// wrapper.replaceChild(div,hearths[0]);
