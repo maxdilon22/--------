@@ -1,40 +1,21 @@
-
 "use strict";
 
-// const btn = document.querySelectorAll('button'),
-//       overlay = document.querySelector('.overlay');
+// console.log(document.body.childNodes);
 
-// // let i = 0;
-// // const del = e => {
-// //     // i++;
-// //     console.log(e.currentTarget);
-// //     console.log(e.type);
-// //     // if (i == 1) {
-// //     //     btn.removeEventListener('click', del);
-// //     // } 
+// console.log(document.documentElement);
 
-// // };
+// console.log(document.body.firstElementChild);
 
-// // btn.addEventListener('click', del);
-// // overlay.addEventListener('click', del);
+// console.log(document.body.lastElementChild);
+
+// console.log(document.querySelector('#current').parentNode.parentNode);
+
+// console.log(document.querySelector('[data-current = "3"]').parentElement);
 
 
-// // const link = document.querySelector('a');
-
-// // link.addEventListener('click', e => {
-// //     e.preventDefault();
-// //     console.log(e.target);
-// // });
-
-
-// btn.forEach( i => {
-//     i.addEventListener('click', e => {
-//         console.log(e.target);
-//     },{once: true});
-// });
-
-// ------------------------------------------ //
-//                 ==PRACTIC==                //
-// ------------------------------------------ //
-
-
+for (let key of document.body.childNodes) {
+    if(key.nodeName == "#text") {
+        continue;
+    } 
+    console.log(key);
+}
