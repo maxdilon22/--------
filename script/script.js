@@ -1,51 +1,38 @@
 "use strict";
 
-const btns = document.querySelectorAll('button'),
-      wrapper = document.querySelector('.btn-block');
-
-// console.log(btns[0].classList.length);
-
-// console.log(btns[0].classList.item(1));
-
-// console.log(btns[1].classList.add('red','fsfsdfs'));
+const btn = document.querySelector('.btn');
+let timerId,
+     i = 0;
 
 
-// console.log(btns[0].classList.remove('blue'));
+function myAnimation() {
+    const elem = document.querySelector('.box');
+    let pos = 0;
+    const id = setInterval(frame,10);
+    function frame() {
+        if (pos == 300) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+        }
+    }
+}
+btn.addEventListener('click',myAnimation);
 
-// console.log(btns[0].classList.toggle('blue'));
 
-// if (btns[1].classList.contains('red')) {
-//     console.log('red');
-// } else {
 
+
+// function logger() {
+//     if( i == 3) {
+//         clearInterval(timerId);
+//     }
+//     console.log('hello');
+//     i++;
 // }
 
-
-btns[0].addEventListener('click',() => {
-    // if (!btns[1].classList.contains('red')) {
-    //     btns[1].classList.add('red');
-    // } else {
-    //     btns[1].classList.remove('red');
-    // }
-
-    btns[1].classList.toggle('red');
-});
-
-
-wrapper.addEventListener('click', e => {
-    if(e.target && e.target.matches('button.red')) {
-        console.log('hello!');
-    }
-});
-
-// btns.forEach( btn => {
-//     btn.addEventListener('click', ()=> {
-//         console.log('hello');
-//     });
-// });
-
-
-
-const btn = document.createElement('button');
-btn.classList.add('red');
-wrapper.append(btn);
+// let id = setTimeout( function() {
+//     console.log('hello');
+//     id = setTimeout(log,500);
+// },500);
