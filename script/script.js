@@ -1,29 +1,18 @@
-'use strict';
+"use strict";
 
-class Rectangle {
-    constructor(height, width) {
-        this.height = height;
-        this.width = width;
+let obj = {
+    name: 'Nick',
+    age: 20,
+    parents: {
+        mom: 'Tatyana'
     }
-    calcArea() {
-        return this.height * this.width;
-    }
-}
+};
 
+console.log(JSON.parse(JSON.stringify(obj)));
 
-class ColoredRectangleWithText extends Rectangle {
-    constructor(width, height, text, bgColor) {
-        super(height,width);
-        this.text = text;
-        this.bgColor = bgColor;
-    }
-    showMyProps() {
-        console.log(`Текст: ${this.text}, цвет: ${this.bgColor}`);
-    }
-}
+let copy = JSON.parse(JSON.stringify(obj));
 
-const square = new Rectangle(10,10),
-      long = new Rectangle(20,100),
-      div = new ColoredRectangleWithText(25,10,'salam','#fff');
-div.showMyProps();
-console.log(div.calcArea());
+copy.parents.mom = 'Olga';
+
+console.log(obj);
+console.log(copy);
