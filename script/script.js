@@ -1,27 +1,47 @@
-'use strict';
+// console.log('запрос данных');
 
-const inputRUB = document.querySelector('#rub'),
-      inputUSD = document.querySelector('#usd');
-    
-inputRUB.addEventListener('input', ()=> {
-    const request = new XMLHttpRequest();
+// const req = new Promise( (resolve,reject) => {
+//     setTimeout( ()=> {
+//         console.log('Подготовка данных...');
+//         const product = {
+//             name: 'tv',
+//             price: 2000
+//         };
+//         resolve(product);
+//     },2000);
+// });
 
-    // requst.open(method, url, async, login, password);
-    request.open('GET','script/current.json');
-    request.setRequestHeader('Content-type','application/json; charset="UTF-8"');
-    request.send();
+// req.then( (product) => {
+//    return new Promise( (resolve,reject) => {
+//     setTimeout( ()=> {
+//         product.status = 'order';
+//         resolve(product);
+//     },2000);
+//    }).then( data => {
+//        data.modify = true;
+//        return data
+//    }).then( (data) => {
+//         console.log(data);
+//    });
+// }).catch( ()=> {
+//     console.log('Произошла ошибка!');
+// }).finally( ()=> {
+//     console.log('До свидания!');
+// });
 
-    request.addEventListener('load',()=>{
-        if (request.status === 200) {
-            const data = JSON.parse(request.response);
-            inputUSD.value = (inputRUB.value / data.current.usd).toFixed(2);
-        } else {
-            inputUSD.value = 'Что-то пошло не так';
-        }
+const test = time => {
+    return new Promise(resolve => {
+        setTimeout( () => resolve(),time);
     });
-    // status (404) (0), (200), (403)
-    //statusText
-    // response
-    // responseText
-    // readyState
+};
+
+// test(1000).then( ()=> console.log('1000 мс') );
+// test(2000).then( ()=> console.log('2000 мс') );
+
+// Promise.all([test(1000),test(2000)]).then( ()=> {
+//     console.log('All');
+// });
+
+Promise.race([test(1000),test(2000)]).then( ()=> {
+    console.log('All');
 });
