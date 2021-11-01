@@ -1,30 +1,15 @@
 'use strict';
 
-// new RegExp('pattern','flags');
+const persone = {
+    name: 'Alex',
+    age: 25,
+    get userAge() {
+        return this.age;
+    },
+    set userAge(num) {
+        this.age = num;
+    }
+};
 
-// /pattern/
-
-// const ans = prompt('Введите число:');
-
-// const reg = /\d/g;
-// console.log(ans.match(reg));
-
-const str = 'My name is R2D2';
-console.log(str.match(/\D/ig));
-
-// /d
-// /w
-
-// /s
-
-// i, g, m
-
-// console.log(ans.search(reg));
-// console.log(ans.match(reg));
-
-// const pass = prompt('Password:');
-
-// console.log(pass.replace(/\\./g,"*"));
-
-// console.log('12-34-56'.replace(/-/g,':'));
-
+console.log(persone.userAge = 30);
+console.log(persone.userAge);
