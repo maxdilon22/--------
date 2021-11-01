@@ -1,54 +1,43 @@
 'use strict';
 
-// filter
+// localStorage.setItem('number',5);
+// localStorage.removeItem('number');
 
-// let names = ['nik','alex','jorik','voldemart'].filter( (name)=> name.length < 5);
-// console.log(names);
+// localStorage.clear();
+// console.log(localStorage.getItem('number'));
 
-// map
+const checkbox = document.querySelector('#checkbox'),
+       form = document.querySelector('form'),
+       change = document.querySelector('#color');
 
-// let answers = ['IvAn','AnNA','Hello'].map( i => i.toLowerCase());
-// console.log(answers);
+if( localStorage.getItem('isChecked')) {
+    checkbox.checked = true;
+}
+if(localStorage.getItem('bg') === 'changed') {
+    form.style.backgroundColor = 'red';
+} 
 
+checkbox.addEventListener('change', () => {
+    localStorage.setItem('isChecked',true);
+});
 
-// every / some =======> every - если все данные верны возвращает true ;;;; some -- если хотябы одно
-
-// const some = [4, 5, 4];
-
-// console.log(some.some( item => {
-//     return typeof(item) == 'number';
-// }));
-
-
-// console.log(some.every( item => {
-//     return typeof(item) == 'number';
-// }));
-
-
-// reduce
-
-// const arr = [4, 5, 1, 3, 2, 6];
-// const result = arr.reduce( (sum, current) => sum + current);
-// console.log(result);
-
-// const arr = [4, 5, 1, 3, 2, 6];
-// const result = arr.reduce( (sum, current) => sum + current, 3);
-// console.log(result);
+change.addEventListener('click', () => {
+    if(localStorage.getItem('bg') === 'changed') {
+        localStorage.removeItem('bg');
+        form.style.backgroundColor = '#fff';
+    } else {
+        localStorage.setItem('bg','changed');
+        form.style.backgroundColor = 'red';
+    }
+});
 
 
-// const arr = ['apple','pear','plum'];
-// const result = arr.reduce( (sum, current) => `${sum}, ${current}`);
-// console.log(result);
-
-const obj = {
-    ivan: 'persone',
-    ann: 'persone',
-    dog: 'animal',
-    cat: 'animal'
+const persone = {
+    name: 'Alex',
+    age: 25
 };
 
+const serializedPersone = JSON.stringify(persone);
 
-const newArr = Object.entries(obj)
-.filter( i => i[1] === 'persone')
-.map( i => i[0]);
-console.log(newArr);
+localStorage.setItem('Alex',serializedPersone);
+console.log(localStorage.getItem('Alex'));
